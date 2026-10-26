@@ -22,9 +22,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Bagel+Fat+One&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=11">
-<script src="../assets/js/config.js?v=11" defer></script>
-<script src="../assets/js/site.js?v=11" defer></script>
+<link rel="stylesheet" href="../assets/css/site.css?v=12">
+<script src="../assets/js/config.js?v=12" defer></script>
+<script src="../assets/js/site.js?v=12" defer></script>
 </head>
 <body>
 <svg class="sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -85,7 +85,7 @@
       </g>
       <circle cx="178" cy="128" r="5" fill="#1A0B22"/><circle cx="222" cy="128" r="5" fill="#1A0B22"/>
       <!-- chest print -->
-      <text x="200" y="272" text-anchor="middle" style="font-family:'Bagel Fat One','Archivo',sans-serif;font-size:40px;fill:var(--p)">coolprez</text>
+      <rect x="114" y="226" width="172" height="60" rx="10" fill="#FFF6EC" stroke="#1A0B22" stroke-width="2.5"/><image href="../assets/img/coolprez-logo.webp" x="122" y="232" width="156" height="48"/>
       <!-- size tag -->
       <rect x="282" y="402" width="12" height="20" rx="2" style="fill:var(--g2)" stroke="#1A0B22" stroke-width="2"/>
     </symbol>
@@ -112,7 +112,7 @@
       <circle cx="200" cy="236" r="70" style="fill:var(--p)" stroke="#1A0B22" stroke-width="4"/>
       <circle cx="200" cy="236" r="70" fill="url(#halftone)" opacity=".28"/>
       <circle cx="200" cy="236" r="52" fill="none" stroke="#1A0B22" stroke-width="2.5" stroke-dasharray="2 6"/>
-      <text x="200" y="256" text-anchor="middle" style="font-family:'Bagel Fat One','Archivo',sans-serif;font-size:58px;fill:#1A0B22">cp</text>
+      <image href="../assets/img/coolprez-icon.webp" x="166" y="198" width="68" height="76"/>
       <text style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;fill:#1A0B22;font-weight:500"><textPath href="#arc-yours" startOffset="50%" text-anchor="middle">MAKE IT YOURS</textPath></text>
       <!-- woven hem label -->
       <rect x="288" y="392" width="18" height="12" rx="1" style="fill:var(--g2)" stroke="#1A0B22" stroke-width="2"/>
@@ -137,7 +137,7 @@
         <circle cx="200" cy="220" r="12" fill="#1A0B22"/>
       </g>
       <path d="M244 166 249 180 263 185 249 190 244 204 239 190 225 185 239 180Z" fill="#1A0B22"/>
-      <text x="200" y="320" text-anchor="middle" style="font-family:'Bagel Fat One','Archivo',sans-serif;font-size:30px;fill:var(--p)">coolprez</text>
+      <rect x="131" y="291" width="138" height="48" rx="8" fill="#FFF6EC" stroke="#1A0B22" stroke-width="2"/><image href="../assets/img/coolprez-logo.webp" x="138" y="296" width="124" height="38"/>
     </symbol>
   </defs>
 </svg>
@@ -186,7 +186,7 @@
       <div class="lvl3">
         <ul class="subs"><li>Graphics</li><li>Recreation</li><li>Cleanup</li><li>Print-ready files</li><li>Websites &amp; stores</li></ul>
         <div class="slot">
-          <span class="node cp"><span class="mono">Brand 01</span><b>coolprez</b></span>
+          <span class="node cp"><span class="mono">Brand 01</span><b><img class="cp-logo" src="../assets/img/coolprez-logo.webp" width="1400" height="427" alt="Coolprez"></b></span>
           <span class="node future"><span class="mono">Future brands</span></span>
         </div>
       </div>
@@ -246,10 +246,21 @@
       <div><p class="mono eyebrow">The team</p><h2 id="t-title">The people behind the work.</h2></div>
       <p class="lede">Designers, a developer and support staff who keep every apparel project moving, from artwork to online store.</p>
     </div>
-    <div class="team-band reveal">
-      <figure><img src="../assets/img/team-photo-a.webp" width="880" height="990" alt="The FizEdge Projects team in branded T-shirts" loading="lazy"></figure>
-      <figure><img src="../assets/img/team-photo-b.webp" width="880" height="990" alt="The FizEdge Projects team in branded T-shirts and caps" loading="lazy"></figure>
-      <span class="tb-note mono" aria-hidden="true">Team shoots · FizEdge Projects</span>
+    <div class="team-stage reveal">
+      <figure class="team-print" aria-label="The FizEdge Projects team">
+        <div class="tp-stage">
+          <img class="tp-img on" src="../assets/img/team-photo-a.webp" width="880" height="990" alt="The FizEdge Projects team in branded T-shirts" loading="lazy">
+          <img class="tp-img" src="../assets/img/team-photo-b.webp" width="880" height="990" alt="The FizEdge Projects team in branded T-shirts and caps" loading="lazy">
+          <span class="tp-squeegee" aria-hidden="true"></span>
+        </div>
+        <span class="tp-tag t1 mono" aria-hidden="true"><img src="../assets/img/logo-128.webp" width="22" height="22" alt="">The FizEdge team</span>
+        <span class="tp-tag t2 mono" aria-hidden="true">Shoot <b class="tp-n">01</b> / 02</span>
+      </figure>
+      <div class="ts-copy">
+        <p class="mono" style="color:#9FB0C3">Team shoots</p>
+        <p class="ts-big">Same team. Same shirts. Every project.</p>
+        <div class="tp-dots" role="tablist" aria-label="Choose team photo"><button type="button" class="on" aria-label="Team photo 1"></button><button type="button" aria-label="Team photo 2"></button></div>
+      </div>
     </div>
     <ul class="team-grid">
       <li class="member reveal"><div class="ph"><img src="../assets/img/team/afeez-tajudeen.webp" width="640" height="800" alt="" loading="lazy"></div><h3>Afeez Tajudeen</h3><p class="role mono">Managing Director</p></li>
@@ -298,7 +309,7 @@
       <a class="port-cp reveal" href="../brands/coolprez/">
         <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z" fill="#FF8648"/></svg>
         <span class="chip chip-cp"><span class="dot" aria-hidden="true"></span><span data-cp="chip">In development</span></span>
-        <span class="word">coolprez</span>
+        <img class="cp-logo word cp-sticker" src="../assets/img/coolprez-logo.webp" width="1400" height="427" alt="Coolprez">
         <span style="font-size:18px;color:#EADCF2;max-width:40ch">Custom T-shirts and apparel for you, your event or your business.</span>
         <span style="font-weight:700">Meet Coolprez →</span>
       </a>
@@ -336,7 +347,7 @@
     <a class="btn btn-white" href="../contact/?type=artwork">Start an artwork project <span class="arr" aria-hidden="true">→</span></a>
   </div>
   <div class="half b">
-    <span class="ghost" aria-hidden="true">cp</span>
+    <img class="cp-icon ghost-icon" src="../assets/img/coolprez-icon.webp" width="577" height="640" alt="" aria-hidden="true">
     <p class="mono" style="color:#E9C4FF">Partnerships</p>
     <h2>Want to work with us?</h2>
     <a class="btn btn-cp" href="../contact/?type=business">Get in touch <span class="arr" aria-hidden="true">→</span></a>

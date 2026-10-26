@@ -308,19 +308,22 @@
   (function () {
     var tp = document.querySelector('.team-print'); if (!tp) return;
     var imgs = tp.querySelectorAll('.tp-img'), n = tp.querySelector('.tp-n'), i = 0, busy = false;
-    if (imgs.length < 2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var visible = true;
+    var dots = document.querySelectorAll('.tp-dots button');
+    if (imgs.length < 2) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches, visible = true, timer;
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(tp);
-    function swap() {
-      if (busy || !visible || document.hidden) return; busy = true;
-      var cur = imgs[i], nx = imgs[(i + 1) % imgs.length];
+    function mark(k) { if (n) n.textContent = '0' + (k + 1); each('.tp-dots button', function (d, x) { d.classList.toggle('on', x === k); d.setAttribute('aria-selected', x === k); }); }
+    function go(k, auto) {
+      if (busy || k === i) return; if (auto && (!visible || document.hidden)) return;
+      var cur = imgs[i], nx = imgs[k];
+      if (reduce) { cur.classList.remove('on'); nx.classList.add('on'); i = k; mark(k); return; }
+      busy = true;
       tp.classList.remove('pulling'); void tp.offsetWidth; tp.classList.add('pulling');
-      cur.classList.add('outgoing'); nx.classList.add('incoming');
-      setTimeout(function () {
-        cur.classList.remove('on', 'outgoing'); nx.classList.remove('incoming'); nx.classList.add('on');
-        i = (i + 1) % imgs.length; if (n) n.textContent = '0' + (i + 1); busy = false;
-      }, 1300);
+      cur.classList.add('outgoing'); nx.classList.add('incoming'); mark(k);
+      setTimeout(function () { cur.classList.remove('on', 'outgoing'); nx.classList.remove('incoming'); nx.classList.add('on'); i = k; busy = false; }, 1300);
     }
-    setInterval(swap, 5200);
+    function start() { clearInterval(timer); if (!reduce) timer = setInterval(function () { go((i + 1) % imgs.length, true); }, 5200); }
+    Array.prototype.forEach.call(dots, function (d, x) { d.addEventListener('click', function () { go(x); start(); }); });
+    start();
   })();
 })();
